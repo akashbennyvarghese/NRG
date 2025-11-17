@@ -1,4 +1,4 @@
-import { query } from '../config/database.js';
+import { query } from '../src/config/database.js';
 
 const initDB = async () => {
   console.log('Starting database initialization...');

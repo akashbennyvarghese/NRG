@@ -1,5 +1,5 @@
-import { query } from '../config/database.js';
-import { hashPassword } from '../utils/auth.js';
+import { query } from '../src/config/database.js';
+import { hashPassword } from '../src/utils/auth.js';
 
 const seedDatabase = async () => {
   console.log('Starting database seeding...');

@@ -27,6 +27,25 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Root endpoint
+app.get('/', (req: Request, res: Response) => {
+  res.json({
+    message: 'NRG E-Commerce API',
+    version: '1.0.0',
+    status: 'running',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth (register, login)',
+      products: '/api/products (browse, search)',
+      cart: '/api/cart (manage shopping cart)',
+      orders: '/api/orders (create, track orders)',
+      payments: '/api/payments (process payments)',
+      admin: '/api/admin (admin operations)'
+    }
+  });
+});
+
 // Health check
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
